@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    padding: 32px;
+}
+
+li {
+    background-color: goldenrod;
+    margin: 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding-left: 8px;
+    
+}
+
+.inputRow {
+    background-color: rgba(255, 0, 0, 0.253);
+    margin: 8px;
+    padding: 8px;
+    border: 2px solid black;
+    border-radius: 16px;
+    width: fit-content;
+}
+
+#enviarBtn{
+   background-color: dodgerblue; 
+   color: white;
+   width: 80px;
+   height: 32px;
+}
