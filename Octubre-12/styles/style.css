@@ -8,7 +8,8 @@ body {
 }
 
 li {
-    background-color: goldenrod;
+    background: #ffcb00;
+background: linear-gradient(90deg,#ffcb00 0%, #585813 80%);
     margin: 8px;
     border: 2px solid black;
     border-radius: 8px;
@@ -30,4 +31,5 @@ li {
    color: white;
    width: 80px;
    height: 32px;
+   box-shadow: 5px 5px 5px 0px rgb(0, 0, 0);
 }
