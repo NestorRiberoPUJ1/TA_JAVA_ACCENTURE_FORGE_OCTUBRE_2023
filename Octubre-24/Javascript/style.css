@@ -1,0 +1,77 @@
+/* rojo #ce3036 , #1b345d,#2a7d8b,#c1d5eb #61d7d9*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.mainContainer {
+    width: 970px;
+    background-color: #1b345d;
+    margin: 0 auto;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #ce3036;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.header>h1 {
+    color: #c1d5eb;
+}
+
+
+.sideMenu {
+    background-color: #2a7d8b;
+    padding: 16px;
+    width: 200px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: top;
+
+}
+
+.sideMenu ul {
+    margin-left: 16px;
+}
+
+a {
+    color: #5acdd9;
+}
+
+.mainContent {
+    width: 669px;
+    background-color: #0e1822;
+    color: #c1d5eb;
+    padding: 24px 16px 16px 16px;
+    border-radius: 8px;
+    display: inline-block;
+
+}
+
+.mainContent h2,
+.mainContent li,
+.mainContent p {
+    margin-bottom: 16px;
+}
+
+.mainContent ul {
+    margin-left: 16px;
+}
+
+span {
+    color: #626cf3
+}
+
+.footer {
+    color: #c1d5eb;
+    background-color: #c1d5eb5f;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
