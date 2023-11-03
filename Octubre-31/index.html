@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+
+</head>
+
+<body>
+    <section id="main">
+        <header>
+            <h1>Just<span>Dessert</span></h1>
+            <div>
+                <button class="btn btn-orange" onclick="removeButton(this)">Join</button>
+                <button class="btn btn-blue">Login</button>
+            </div>
+        </header>
+        <nav>
+            <div>
+                <input type="text" placeholder="SEARCH" id="searchText">
+                <button class="btn btn-blue" onclick="searchText()">GO</button>
+            </div>
+
+            <figure>
+                <img src="./static/assets/imgs/cake.png" alt="Cake">
+                <figcaption>Cakes</figcaption>
+            </figure>
+            <figure>
+                <img src="./static/assets/imgs/cookie.png" alt="Cookies">
+                <figcaption>Cookies</figcaption>
+            </figure>
+            <figure>
+                <img src="./static/assets/imgs/ice-cream.png" alt="ice-cream">
+                <figcaption>Ice-Creams</figcaption>
+            </figure>
+            <figure>
+                <img src="./static/assets/imgs/pie.png" alt="pie">
+                <figcaption>Pies</figcaption>
+            </figure>
+        </nav>
+        <main>
+            <div class="leftCol">
+                <h1>Recipe Of The Day</h1>
+                <figure class="recipeCard">
+                    <img src="./static/assets/imgs/orange-tart.jpg" alt="pie">
+                    <figcaption>
+                        <div>
+                            <p>Orange Tea Jelly Tart</p>
+                            <div>
+                                <img onclick="likeElement(this)" src="./static/assets/imgs/heart.png" alt="heart">
+                                <p>68</p>
+                            </div>
+                        </div>
+                        <p>By: <a href="#">Yuripiano</a></p>
+                    </figcaption>
+                </figure>
+                <h1> <a href="#main">See Full Recipe</a></h1>
+            </div>
+            <div class="rightCol">
+
+                <h3>Recommended for your:</h3>
+                <hr>
+                <figure class="recipeCard">
+                    <img src="./static/assets/imgs/macarons.jpg" alt="macarons">
+                    <figcaption>
+                        <div>
+                            <p>Macarons</p>
+                            <div>
+                                <img onclick="likeElement(this)" src="./static/assets/imgs/heart.png" alt="heart">
+                                <p>212</p>
+                            </div>
+                        </div>
+                        <p>By: <a href="#">Emilie W</a></p>
+                    </figcaption>
+                </figure>
+                <figure class="recipeCard">
+                    <img src="./static/assets/imgs/creme-brulee.jpg" alt="creme-brulee">
+                    <figcaption>
+                        <div>
+                            <p>Creme-brulee</p>
+                            <div>
+                                <img onclick="likeElement(this)" src="./static/assets/imgs/heart.png" alt="heart">
+                                <p>33</p>
+                            </div>
+                        </div>
+                        <p>By: <a href="#">MariaG</a></p>
+                    </figcaption>
+                </figure>
+
+            </div>
+        </main>
+
+    </section>
+    <script src="./static/scripts/script.js"></script>
+</body>
+
+</html>

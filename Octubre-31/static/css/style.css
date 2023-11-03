@@ -1,0 +1,171 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+#main {
+    width: 970px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333333;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 32px;
+}
+
+header h1 {
+    color: white;
+    font-size: xx-large;
+}
+
+header span {
+    color: #fd9700;
+}
+
+.btn {
+    height: 24px;
+    min-width: 48px;
+    border-radius: 0px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+.btn-orange {
+    background-color: #fd9700;
+    color: black;
+}
+
+.btn-blue {
+    background-color: #085392;
+    color: white;
+}
+
+nav {
+    background-color: #f7c99a;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 32px;
+}
+
+
+nav>div {
+    display: flex;
+    flex-direction: row;
+}
+
+nav>div>input {
+    height: 24px;
+}
+
+nav>div>button.btn {
+    min-width: 24px;
+    width: 30px;
+}
+
+
+nav figure {
+    width: 124px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+nav figure>img {
+    background-color: white;
+    width: 50%;
+    border-radius: 50%;
+    padding: 4px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+}
+
+.leftCol {
+    flex: 2;
+    overflow: hidden;
+    margin-right: 32px;
+    background-color: rgb(222, 222, 222);
+    padding: 16px;
+    height: fit-content;
+}
+
+.leftCol>h1:first-of-type {
+    margin-bottom: 16px;
+}
+
+
+.rightCol {
+    flex: 1;
+}
+
+.rightCol hr {
+    margin: 16px 0px;
+}
+
+
+main h1 {
+    color: #085392;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.recipeCard {
+    margin-bottom: 16px;
+}
+
+.recipeCard>img {
+    width: 100%;
+}
+
+
+@keyframes example {
+    0% {
+        transform: scale(1.0);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+.recipeCard>img:hover {
+
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+.recipeCard>figcaption>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recipeCard>figcaption>div>div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.recipeCard>figcaption>div>div>img {
+    height: 24px;
+    margin-right: 8px;
+}
+
+.recipeCard>figcaption p {
+    font-size: 1.5em;
+}
