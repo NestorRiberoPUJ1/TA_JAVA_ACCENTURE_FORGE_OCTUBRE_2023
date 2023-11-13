@@ -16,7 +16,7 @@ public class HolaMundo {
         String[] lenguajes = { "Java", "Python", "JavaScript", "C++" };
 
         double n = 10.99;
-        int edad = (int) n;
+        Integer edad = (int) n;
 
         System.out.println("FIN");
 
