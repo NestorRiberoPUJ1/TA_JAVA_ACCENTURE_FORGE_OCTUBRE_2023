@@ -1,3 +1,7 @@
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainClass {
     public static void main(String[] args) {
@@ -32,5 +36,18 @@ public class MainClass {
         Celular.MejorarRed();
         System.out.println(Celular.getRed());
 
+        ArrayList<Celular> moviles = new ArrayList<Celular>() {
+            {
+                add(caterpillar);
+                add(iphone);
+                add(xiaomi);
+            }
+        };
+
+        System.out.println(moviles);
+
+        ArrayList<Celular> mov2 = new ArrayList<Celular>(List.of(caterpillar, iphone, xiaomi));
+        /* =[ob1,ob2,ob3] */
+        System.out.println(mov2);
     }
 }

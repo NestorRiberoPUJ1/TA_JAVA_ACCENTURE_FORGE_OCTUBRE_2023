@@ -40,6 +40,6 @@ WHERE countries.code="ARG" AND cities.district="Buenos Aires" AND cities.populat
 SELECT countries.region, COUNT(countries.region)  as countries FROM countries
 GROUP BY region
 ORDER BY countries DESC
-;
+;languages
 
 
