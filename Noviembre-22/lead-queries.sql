@@ -34,3 +34,14 @@ AND leads.registered_datetime< "2011-02-15"
 GROUP BY sites.site_id
 ;
 
+#10 Write a single query that retrieves all the sites that each client owns. Group the results so that each row shows
+# a new client and have a new field called 'sites' that has all the sites that the client owns
+SELECT CONCAT(clients.first_name," ",clients.last_name) as client_name,
+GROUP_CONCAT(sites.domain_name SEPARATOR " / ") as websites
+FROM clients
+JOIN sites ON clients.client_id = sites.client_id
+GROUP BY clients.client_id
+ORDER BY clients.client_id
+;
+
+
