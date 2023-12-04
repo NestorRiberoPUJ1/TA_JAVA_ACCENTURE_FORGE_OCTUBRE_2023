@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class EstudianteTest {
 
     public static void main(String[] args) {
@@ -25,6 +27,29 @@ public class EstudianteTest {
         long end = System.currentTimeMillis();
         double total = (double) (end - start) / 1000;
         System.out.println("Tiempo de ejecucion: " + total + " segundos");
+
+        /* Casting de variables */
+
+        int platos = 24;
+
+        double recetas = 14.0;
+
+        String perros = "12";
+
+        platos = (int) recetas;
+        recetas = platos;
+
+        Double.parseDouble(perros);
+        platos = Integer.parseInt(perros);
+
+        char hola = 12;
+
+
+        Estudiante nestor = new Estudiante();
+
+
+        Date cumple= new Date();
+       
     }
 
 }
