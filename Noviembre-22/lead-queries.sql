@@ -34,60 +34,14 @@ AND leads.registered_datetime< "2011-02-15"
 GROUP BY sites.site_id
 ;
 
-#6 What query would you run to get a list of client name and the total # of leads we have generated for each of our
-#  client between January 1st 2011 to December 31st 2011
-
-SELECT CONCAT(clients.first_name," ",clients.last_name) as client_name ,
-COUNT(clients.client_id) as leads 
+#10 Write a single query that retrieves all the sites that each client owns. Group the results so that each row shows
+# a new client and have a new field called 'sites' that has all the sites that the client owns
+SELECT CONCAT(clients.first_name," ",clients.last_name) as client_name,
+GROUP_CONCAT(sites.domain_name SEPARATOR " / ") as websites
 FROM clients
-JOIN  sites ON clients.client_id = sites.client_id
-JOIN leads ON sites.site_id= leads.site_id
-WHERE leads.registered_datetime >= "2010-12-31" 
-AND leads.registered_datetime < "2012-01-01"
+JOIN sites ON clients.client_id = sites.client_id
 GROUP BY clients.client_id
-;
-
-
-#7 What query would you run to get a list of client name and the total # of leads we have generated for each client
-#  each month between month 1 - 6 of Year 2011
-
-SELECT CONCAT(clients.first_name," ", clients.last_name) as client_name,
-COUNT(clients.client_id) as leads, MONTHNAME(leads.registered_datetime)
-FROM clients
-JOIN sites ON clients.client_id=sites.site_id
-JOIN leads ON sites.site_id= leads.site_id
-WHERE MONTH(leads.registered_datetime)>=0
-AND  MONTH(leads.registered_datetime) <=6
-AND YEAR(leads.registered_datetime)=2011
-GROUP BY clients.client_id, MONTH(leads.registered_datetime)
-;
-
-#8 What query would you run to get a list of client name and the total # of leads we have generated for each of
-#our clients site between January 1st 2011 to December 31st 2011?
-SELECT CONCAT(clients.first_name," ",clients.last_name) as client_name ,
-sites.domain_name as website,
-COUNT(clients.client_id) as leads ,
-DATE_FORMAT(sites.created_datetime,"%M %d,%Y") as date_generated
-FROM clients
-JOIN  sites ON clients.client_id = sites.client_id
-JOIN leads ON sites.site_id= leads.site_id
-WHERE leads.registered_datetime >= "2010-12-31" 
-AND leads.registered_datetime < "2012-01-01"
-GROUP BY sites.site_id
 ORDER BY clients.client_id
 ;
 
-
-#9 Write a single query that retrieves total revenue collected from each client each month of the year?
-
-SELECT CONCAT(clients.first_name," ",clients.last_name) as client_name ,
-SUM(amount) as amount,
-MONTHNAME(billing.charged_datetime) as month_charged,
-YEAR(billing.charged_datetime) as year_charged  FROM clients
-JOIN billing ON clients.client_id= billing.client_id
-GROUP BY clients.client_id,MONTH(billing.charged_datetime),YEAR(billing.charged_datetime)
-ORDER BY clients.client_id,YEAR(billing.charged_datetime),MONTH(billing.charged_datetime)
-;
-
-#10
 
