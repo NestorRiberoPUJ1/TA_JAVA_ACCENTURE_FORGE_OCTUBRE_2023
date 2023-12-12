@@ -20,16 +20,38 @@ public class BankAccount {
         dinero += saldoAhorros + saldoCorriente;
     }
 
-    public void deposito(double valor ,String cuenta){
-        if(cuenta =="ahorros"){
-            this.saldoAhorros+=valor;
-            dinero+=valor;
-        }
-        else if(cuenta=="corriente"){
-            this.saldoCorriente+=valor;
-             dinero+=valor;
+    public void deposito(double valor, String cuenta) {
+        if (cuenta == "ahorros") {
+            this.saldoAhorros += valor;
+            dinero += valor;
+        } else if (cuenta == "corriente") {
+            this.saldoCorriente += valor;
+            dinero += valor;
         }
 
+    }
+
+    public void retiro(double valor, String cuenta) {
+        if (cuenta == "ahorros") {
+            if (valor <= this.saldoAhorros) {
+                this.saldoAhorros -= valor;
+                dinero -= valor;
+            } else {
+                System.out.println("Fondos insuficientes");
+            }
+        } else if (cuenta == "corriente") {
+            if (valor <= this.saldoCorriente) {
+                this.saldoCorriente -= valor;
+                dinero -= valor;
+            } else {
+                System.out.println("Fondos insuficientes");
+            }
+        }
+    }
+
+    public void verSaldo() {
+        System.out.println("Saldo Cuenta ahorros " + this.saldoAhorros);
+        System.out.println("Saldo Cuenta Corriente " + this.saldoCorriente);
     }
 
     private static String cuentaAleatoria() {
