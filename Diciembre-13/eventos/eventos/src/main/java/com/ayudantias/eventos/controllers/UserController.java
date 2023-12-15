@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.ayudantias.eventos.models.User;
 import com.ayudantias.eventos.services.UserServices;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 
@@ -34,6 +35,24 @@ public class UserController {
         } else {
             userServices.createUser(user);
             return "redirect:/dashboard";
+        }
+    }
+
+    @PostMapping("/session")
+    public String login(
+            HttpSession session,
+            @ModelAttribute("user") User user) {
+
+        User foundUser = userServices.buscarEmail(user.getEmail());
+        System.out.println(foundUser);
+
+        if (foundUser == null) {
+            return "user/index.jsp";
+        } else if (foundUser.getPassword().contentEquals(user.getPassword())) {
+            session.setAttribute("userId", foundUser.getId());
+            return "redirect:/dashboard";
+        } else {
+            return "user/index.jsp";
         }
     }
 

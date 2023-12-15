@@ -52,6 +52,22 @@
                     <input type="submit" value="Submit" />
                 </form:form>
                 <hr>
+                <h1>Log In</h1>
+                <form:form action="/session" method="post" modelAttribute="user">
+                    
+                    <p>
+                        <form:label path="email">Email</form:label>
+                        <form:input path="email" />
+                        <form:errors path="email" />
+                    </p>
+                  
+                    <p>
+                        <form:label path="password">Password</form:label>
+                        <form:input path="password" />
+                        <form:errors path="password" />
+                    </p>
+                    <input type="submit" value="Submit" />
+                </form:form>
 
             </body>
 
