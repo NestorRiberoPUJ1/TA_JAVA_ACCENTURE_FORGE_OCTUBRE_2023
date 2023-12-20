@@ -2,6 +2,7 @@ package com.ayudantias.ninja_gold.controllers;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 import org.springframework.stereotype.Controller;
@@ -15,17 +16,22 @@ import jakarta.servlet.http.HttpSession;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
+    @GetMapping("/play")
     public String root(HttpSession session, Model model) {
 
         Integer gold = (Integer) session.getAttribute("gold");
-
         if (gold == null) {
             gold = 0;
             session.setAttribute("gold", gold);
         }
 
+        ArrayList<String> actividades = (ArrayList<String>) session.getAttribute("actividades");
+        if (actividades == null) {
+            actividades = new ArrayList<String>();
+        }
+
         model.addAttribute("gold", gold);
+        model.addAttribute("actividades", actividades);
         return "index.jsp";
     }
 
@@ -56,6 +62,10 @@ public class HomeController {
                 random = (random * 100) - 50;
                 newActividad = newActividad.concat("casino ");
                 break;
+            case "reset":
+                session.removeAttribute("gold");
+                session.removeAttribute("actividades");
+                return "redirect:/play";
             default:
                 break;
         }
@@ -72,8 +82,11 @@ public class HomeController {
         newActividad = newActividad.concat(" gold ");
         newActividad = newActividad.concat(new Date().toString());
         session.setAttribute("gold", newGold + gold);
-
-        return "redirect:/";
+        Collections.reverse(actividades);
+        actividades.add(newActividad);
+        Collections.reverse(actividades);
+        session.setAttribute("actividades", actividades);
+        return "redirect:/play";
     }
 
 }

@@ -14,6 +14,11 @@
                 <c:out value="${gold}" />
             </h1>
 
+            <form action="/play" method="post">
+                <input type="hidden" name="type" value="reset">
+                <button>Reset</button>
+            </form>
+
             <div>
                 <h2>FARM</h2>
                 <h3>(earns 10-20 gold)</h3>
@@ -43,14 +48,27 @@
                 <h3>(earns/takes 0-50 gold)</h3>
                 <form action="/play" method="POST">
                     <input type="hidden" name="type" value="casino">
-                    <button>Find Gold</button>
+                    <c:choose>
+                        <c:when test="${gold >-10}">
+                            <button>Find Gold</button>
+                        </c:when>
+                        <c:otherwise>
+                            <button disabled>Find Gold</button>
+                        </c:otherwise>
+                    </c:choose>
                 </form>
             </div>
             <hr>
             <div>
-                <p>
-                    ACTIVIDADES
-                </p>
+                <h3>Actividades</h3>
+                <ul>
+                    <c:forEach var="actividad" items="${actividades}">
+                        <li>
+                            <c:out value="${actividad}" />
+                        </li>
+
+                    </c:forEach>
+                </ul>
             </div>
         </body>
 
